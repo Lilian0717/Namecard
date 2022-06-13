@@ -1,354 +1,94 @@
-@charset "UTF-8";
-body {
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  font-size: 15px;
-  line-height: 28px;
-  letter-spacing: 1px;
-  background-color: #245870;
-  color: rgba(255, 255, 255, 0.9);
-  font-family: "微軟正黑體", san-serif;
+html,body{
+width: 100%;
+height: 100%;	
+display:flex;
+justify-content:center;
+align-items:center;
+background-image:url(https://media.istockphoto.com/photos/black-brick-wall-texture-of-dark-brickwork-closeup-picture-id1129029770?k=20&m=1129029770&s=170667a&w=0&h=WK-vwcCtDUNrBMa86_FjMayjid04ODB30O6Q4XMyFWA=);
+	background-size:cover;
 }
 
-.resume {
-  display: flex;
-  max-width: 950px;
-  border: solid 8px white;
-  padding: 15px;
-  position: relative;
-  /*跟decoration */
+.body{
+	border:3px solid #011FFD;
+	padding:30px 50px;
+	position:relative;
+}
+.body::before,
+.body::after{
+content:"";
+position:absolute;
+width:40px;
+height:40px;
+border:inherit;
+transition:all .5s;
+
+}
+.body::before{
+	top:-15px;
+	left:-15px;
+	border-width:3px 0 0 3px;
+	border-color:#FF2281;
+}
+.body::after{
+	bottom:-15px;
+	right:-15px;
+	border-width:0 3px 3px 0;
+	border-color:#FF2281;
+}
+.body:hover::before,
+.body:hover::after{
+	width:calc(100% + 27px);
+	height:calc(100% + 27px);
 }
 
-.mytalk {
-  font-size: 18px;
+.name{
+	color:#fff;
+	font-family:"微軟正黑體",sans-serif;
+	padding-left:3px;
+  
 }
 
-.left {
-  flex: 5;
+.english{
+	font-size:20px;
+	font-family:sans-serif;
+	margin-left:10px;
+	color:#FF2281;
+	font-weight: 100;
 }
 
-.right {
-  flex: 7;
+.school{
+	color:#fff;
+	letter-spacing:1px;
+	opacity: 0.9;
 }
-
-.left, .right {
-  padding: 20px;
+.line{ 
+	color:#B76CFD;
+  padding-left:10px;
+  margin-top:0px;
+	background-color:black;
+	border-radius:10%;
 }
-
-.left {
-  padding-right: 20px;
+.tag{
+	width:200px;
+  height:180px;
+  border-color: #B76CFD;
+  position:absolute;
+  right:-30px;
+	top:-110px;
+	border-radius:5%;
+	background-image:url(https://i.imgur.com/vxofIYS.jpg);
 }
-
-.right {
-  padding-left: 20px;
-  padding-top: 450px;
+.btnWebsit {
+  color: initial;
+  text-decoration: initial;
+  letter-spacing:2px;
+  padding:15px ;
+  background-color:#ffffff;
+	position:absolute;
+	bottom:130px;
+	
 }
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-h2 {
-  margin: 0;
-  margin-bottom: 25px;
-  font-weight: 400;
-}
-h2::after {
-  content: " ";
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  background-color: #897ECC;
-  margin-left: 10px;
-}
-
-h4 {
-  margin: 0;
-  margin-top: 40px;
-  opacity: 0.8;
-  font-weight: 400;
-}
-
-.listExperience > li {
-  display: flex;
-  margin-bottom: 50px;
-}
-.listExperience li ul {
-  padding-left: 10px;
-  margin-left: 10px;
-  border-left: solid 3px;
-  font-size: 16px;
-}
-.listExperience li:nth-child(1) ul {
-  border-color: #DB9DEB;
-}
-.listExperience li:nth-child(2) ul {
-  border-color: #FFA6EA;
-}
-.listExperience li:nth-child(3) ul {
-  border-color: #CF7B9B;
-}
-
-.circle {
-  width: 50px;
-  height: 50px;
-  background-color: #0C164F;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-}
-
-.p90, .p180, .p270, .p360 {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  left: 50%;
-  top: 0;
-  background-color: #0C164F;
-}
-
-.p180 {
-  left: 50%;
-  top: 50%;
-}
-
-.p270 {
-  left: 0;
-  top: 50%;
-}
-
-.p360 {
-  left: 0;
-  top: 0;
-}
-
-.circle::after {
-  content: "";
-  display: block;
-  background-color: #A0ECFF;
-  width: calc(100% - 50px);
-  height: calc(100% - 50px);
-  border-radius: 50%;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.personality {
-  display: flex;
-  flex-wrap: wrap;
-}
-.personality li {
-  width: 25%;
-  padding: 5px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-}
-
-.listProgram .bar {
-  width: 70%;
-  height: 10px;
-  border: solid 2px #86D1B1;
-  border-radius: 5px;
-}
-.listProgram li {
-  display: flex;
-  /*同一行 */
-  justify-content: space-between;
-  /*左右兩邊 */
-  align-items: center;
-  /*讓文字與線條可以在上下中間對其 */
-  padding-top: 10px;
-  /*上下間隔為10px */
-}
-
-.value {
-  height: 100%;
-  width: 50%;
-  background-color: #245870;
-}
-
-.p60 {
-  width: 60%;
-}
-
-.p70 {
-  width: 0%;
-}
-
-.p80 {
-  width: 80%;
-}
-
-hr {
-  border: none;
-  border-bottom: solid 4px #897ECC;
-  width: 80%;
-  margin-left: 0;
-}
-
-.photo2::before {
-  position: absolute;
-  content: "";
-  width: 280px;
-  height: 300px;
-  background-image: url("https://ppt.cc/fXbqVx@.jpg");
-  top: 120px;
-  left: 600px;
-  border-radius: 5px;
-}
-
-.photo::before {
-  position: absolute;
-  content: "";
-  width: 280px;
-  height: 300px;
-  background-image: url("https://ppt.cc/fA5jFx@.jpg");
-  top: 120px;
-  left: 600px;
-  border-radius: 5px;
-  transition: 1.5s;
-}
-
-.photo2:hover {
-  opacity: 0;
-  transition: 1.5s;
-}
-.scene {
-  width: 80px;
-  height: 60px;
-  background-color: #0ACFBC;
-}
-
-.person .hairs {
-  position: relative;
-}
-.person .hairs .hair3 {
-  width: 100px;
-  height: 50px;
-  border-radius: 25px;
-  background-color: #fff;
-  box-shadow: inset -10px -10px rgba(0, 0, 0, 0.1);
-  margin-left: 5px;
-  margin-top: -45px;
-}
-.person .body {
-  width: 120px;
-  height: 60px;
-  border-radius: 20px;
-  margin-top: -40px;
-  padding-top: 50px;
-  background-color: #E6C77E;
-  box-shadow: inset -10px -10px 0px rgba(0, 0, 0, 0.1);
-}
-.person .body .eyes .eye {
-  width: 25px;
-  height: 20px;
-  border-radius: 10px;
-  display: inline-block;
-  margin-right: 5px;
-  margin-left: 15px;
-  background-color: #fff;
-}
-.person .body .eyes .eye .eyeball {
-  width: 15px;
-  height: 15px;
-  border-radius: 7.5px;
-  background-color: #0C164F;
-}
-.person .mouth {
-  width: 40px;
-  height: 20px;
-  border-radius: 10px;
-  background-color: #F03056;
-  margin-left: 40px;
-  margin-top: 1px;
-}
-.person .food {
-  width: 5px;
-  height: 5px;
-  border-radius: 2.5px;
-  margin-left: -20px;
-  background-color: #F03056;
-}
-
-.scene:hover .person {
-  transform: translate(-3px, -3px);
-  transform-margin-top: 10px;
-}
-.scene:hover .body {
-  box-shadow: inset -10px -10px 0px rgba(0, 0, 0, 0.1), 20px 10px rgba(0, 0, 0, 0.1);
-}
-
-.listProgram:hover .value {
-  background-color: #86D1B1;
-  transition: 1s;
-}
-
-.Personality:hover .p90, .Personality:hover .p180, .Personality:hover .p270, .Personality:hover .p360 {
-  background-color: #68D1D9;
-  transition: 1s;
-}
-
-.ball:hover {
-  top: 150px;
-  left: 550px;
-}
-.ball {
-  width: 280px;
-  height: 300px;
-  background-color: #0C164F;
-  border-radius: 5%;
-  position: absolute;
-  top: 120px;
-  left: 550px;
-  transition: 0.5s;
-}
-.ball .scanner h1 {
-  color: #252839;
-  font-size: 40px;
-  position: absolute;
-  top: 10px;
-}
-
-.scanner h1:before {
-  content: " ";
-  position: absolute;
-  top: -15px;
-  left: 0;
-  width: 0;
-  height: 0%;
-  border-right: 4px solid #68D1D9;
-  box-shadow: 0 0 10px 10px #68D1D9;
-  overflow: hidden;
-  color: red;
-  -webkit-animation: scan 4s linear infinite;
-          animation: scan 4s linear infinite;
-}
-
-@-webkit-keyframes scan {
-  0%, 10%, 100% {
-    width: 0;
-  }
-  60%, 80% {
-    width: 100%;
-  }
-}
-
-@keyframes scan {
-  0%, 10%, 100% {
-    width: 0;
-  }
-  60%, 80% {
-    width: 100%;
-  }
+.btnWebsit:hover{
+  background-color: #B76CFD;
+  color: #ffffff;
 }
