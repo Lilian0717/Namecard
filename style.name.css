@@ -1,0 +1,94 @@
+html,body{
+width: 100%;
+height: 100%;	
+display:flex;
+justify-content:center;
+align-items:center;
+background-image:url(https://media.istockphoto.com/photos/black-brick-wall-texture-of-dark-brickwork-closeup-picture-id1129029770?k=20&m=1129029770&s=170667a&w=0&h=WK-vwcCtDUNrBMa86_FjMayjid04ODB30O6Q4XMyFWA=);
+	background-size:cover;
+}
+
+.body{
+	border:3px solid #011FFD;
+	padding:30px 50px;
+	position:relative;
+}
+.body::before,
+.body::after{
+content:"";
+position:absolute;
+width:40px;
+height:40px;
+border:inherit;
+transition:all .5s;
+
+}
+.body::before{
+	top:-15px;
+	left:-15px;
+	border-width:3px 0 0 3px;
+	border-color:#FF2281;
+}
+.body::after{
+	bottom:-15px;
+	right:-15px;
+	border-width:0 3px 3px 0;
+	border-color:#FF2281;
+}
+.body:hover::before,
+.body:hover::after{
+	width:calc(100% + 27px);
+	height:calc(100% + 27px);
+}
+
+.name{
+	color:#fff;
+	font-family:"微軟正黑體",sans-serif;
+	padding-left:3px;
+  
+}
+
+.english{
+	font-size:20px;
+	font-family:sans-serif;
+	margin-left:10px;
+	color:#FF2281;
+	font-weight: 100;
+}
+
+.school{
+	color:#fff;
+	letter-spacing:1px;
+	opacity: 0.9;
+}
+.line{ 
+	color:#B76CFD;
+  padding-left:10px;
+  margin-top:0px;
+	background-color:black;
+	border-radius:10%;
+}
+.tag{
+	width:200px;
+  height:180px;
+  border-color: #B76CFD;
+  position:absolute;
+  right:-30px;
+	top:-110px;
+	border-radius:5%;
+	background-image:url(https://i.imgur.com/vxofIYS.jpg);
+}
+.btnWebsit {
+  color: initial;
+  text-decoration: initial;
+  letter-spacing:2px;
+  padding:15px ;
+  background-color:#ffffff;
+	position:absolute;
+	bottom:130px;
+	
+}
+.btnWebsit:hover{
+  background-color: #B76CFD;
+  color: #ffffff;
+}
